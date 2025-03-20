@@ -1,0 +1,13 @@
+black
+Django
+django-cors-headers
+django-debug-toolbar
+django-extensions
+djangorestframework
+flake8
+isort
+pre-commit
+ipython
+psycopg2==2.9.7
+gunicorn==21.2.0
+sentry-sdk==1.40.5
