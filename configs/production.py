@@ -1,16 +1,14 @@
 import os
 from datetime import timedelta
-
 import sentry_sdk
-from base import *
 
+from base import *
 from .base import env
 
 DEBUG = False
 
 SECRET_KEY = env("DJANGO_SECRET_KEY")
 ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["example.com"])
-
 
 # MIDDLEWARE += [
 #     "django.middleware.security.SecurityMiddleware",
@@ -23,6 +21,7 @@ ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["example.com"])
 #     "whitenoise.storage.CompressedManifestStaticFilesStorage"  # <-- Updated!
 # )
 
+CORS_ORIGIN_ALLOW_ALL = True
 
 # CORS_ALLOWED_ORIGINS = [
 #     "https://example.com",
@@ -30,7 +29,8 @@ ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["example.com"])
 #     "http://127.0.0.1:9000",
 # ]
 
-CORS_ORIGIN_ALLOW_ALL = True
+
+
 
 
 DATABASES["default"] = env.db("DATABASE_URL")  # noqa F405
@@ -100,6 +100,7 @@ TEMPLATES[-1]["OPTIONS"]["loaders"] = [  # type: ignore[index] # noqa F405
 ]
 
 
+
 # EMAIL
 # ---------------------------------------------------------------------------------------------- #
 
@@ -166,6 +167,8 @@ LOGGING = {
         },
     },
 }
+
+
 
 
 # GOOGLE Cloud Tasks
