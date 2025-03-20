@@ -39,6 +39,9 @@ EXTRA_APPS = [
     "rest_framework",
     "rest_framework.authtoken",
     "corsheaders",
+    "django_filters",
+    "djoser",
+    "phonenumber_field",
     "drf_spectacular",
     # "drf_yasg",
 ]
@@ -231,7 +234,7 @@ REST_FRAMEWORK = {"DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema"}
 DJOSER = {
     "HIDE_USERS": False,
     "SERIALIZERS": {
-        "user": "applications.users.serializers.UserSerializer",
+        # "user": "applications.users.serializers.UserSerializer",
     },
 }
 

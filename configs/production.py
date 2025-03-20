@@ -1,8 +1,9 @@
 import os
 from datetime import timedelta
-import sentry_sdk
 
+import sentry_sdk
 from base import *
+
 from .base import env
 
 DEBUG = False
@@ -28,9 +29,6 @@ CORS_ORIGIN_ALLOW_ALL = True
 #     "http://localhost:8080",
 #     "http://127.0.0.1:9000",
 # ]
-
-
-
 
 
 DATABASES["default"] = env.db("DATABASE_URL")  # noqa F405
@@ -100,7 +98,6 @@ TEMPLATES[-1]["OPTIONS"]["loaders"] = [  # type: ignore[index] # noqa F405
 ]
 
 
-
 # EMAIL
 # ---------------------------------------------------------------------------------------------- #
 
@@ -167,8 +164,6 @@ LOGGING = {
         },
     },
 }
-
-
 
 
 # GOOGLE Cloud Tasks
